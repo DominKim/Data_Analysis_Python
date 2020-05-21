@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>result page</title>
+    <style>
+        #row{column-count: 2;column-gap: 20px; text-align: center;}
+    </style>
+</head>
+<body>
+    <div align = "left" id = "myDiv">
+        <a href="/"><img src="{{ url_for('static', filename='logo.png')}}" width="200"></a>
+    </div>
+    <div align ="center">
+        <h2>
+        <h1> {{search}} 기사 검색 결과 </h1>
+    </div>
+    <div align ="center">
+        <img src=" {{url_for('static', filename='news_plot.png')}}" width="800"> <br>
+    </div>
+    <div align = "center" >
+        <table>
+            <tr>
+                <td align="center" id="row">
+                {% for i in texts %}
+                    {%if loop.index < 30 %}
+                        <a href = "https://ko.wikipedia.org/wiki/{{i[0]}}" id="res">{{i[0] if i[0] is not none}}  </a>
+                    {% endif %}
+                {%endfor%}
+                </td>
+            </tr>
+    </table>
+    </div>
+
+</body> <!-- 본문 끝 -->
+</html> <!-- html 종료 -->
