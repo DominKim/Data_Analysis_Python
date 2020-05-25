@@ -26,7 +26,7 @@ cluster_std : 클러스터 표준편차
 """
 plt.scatter(X[:,0], X[:,1], s = 100, c = y, marker="o", alpha=0.5)
 pd.DataFrame(X).plot(kind = "kde")
-plotting.scatter_matrix(pd.DataFrame(X), c)
+
 # 2. train_test_split
 x_train, x_test, y_train, y_test = train_test_split(X, y, test_size = 0.3)
 
