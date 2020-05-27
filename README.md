@@ -122,7 +122,14 @@ from sklearn.svm import LinearSVC
 >
 >> [step05_sklearn_LogisticRegression](https://github.com/DominKim/Data_Analysis_Python/blob/master/chap06_Regression/lecture/step05_sklearn_LogisticRegression.py)
 >
-
+~~~python3
+# Gridsearch 중요변수 확인방법
+# 1) pipline 활용시
+# step_name = pipline ("regressor", LinearRegressor()) -> regressor
+gs.best_estimator_.named_steps["step_name"].feature_importances_
+# 1) pipline 활용x
+gs.best_estimator_.feature_importances_
+~~~
 
 
 semi_project
